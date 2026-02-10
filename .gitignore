@@ -1,0 +1,16 @@
+# Agent / editor tooling
+AGENTS.md
+TECHNICAL.md
+archive/
+.opencode/
+opencode.json
+
+# OS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build & logs
+protokit/dist/
+protokit/logs/
