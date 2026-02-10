@@ -53,20 +53,25 @@ const shablonyRoute: RouteObject = {
   },
 };
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <AppShell />,
-    children: [
-      {
-        index: true,
-        lazy: async () => {
-          const { HomePage } = await import('./components/HomePage');
-          return { Component: HomePage };
+export const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <AppShell />,
+      children: [
+        {
+          index: true,
+          lazy: async () => {
+            const { HomePage } = await import('./components/HomePage');
+            return { Component: HomePage };
+          },
         },
-      },
-      ...prototypeRoutes,
-    ],
+        ...prototypeRoutes,
+      ],
+    },
+    shablonyRoute,
+  ],
+  {
+    basename: import.meta.env.BASE_URL.replace(/\/$/, ''),
   },
-  shablonyRoute,
-]);
+);

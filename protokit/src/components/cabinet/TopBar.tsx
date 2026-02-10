@@ -165,13 +165,13 @@ export function TopBar({
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexShrink: 0 }}>
             <Box
               component="img"
-              src="/assets/mts-logo.svg"
+              src={`${import.meta.env.BASE_URL}assets/mts-logo.svg`}
               alt="МТС"
               sx={{ width: 32, height: 32 }}
             />
             <Box
               component="img"
-              src="/assets/marketolog-text.svg"
+              src={`${import.meta.env.BASE_URL}assets/marketolog-text.svg`}
               alt="Маркетолог"
               sx={{
                 width: 135,
@@ -309,7 +309,7 @@ export function TopBar({
                       startIcon={
                         <Box
                           component="img"
-                          src="/assets/spark.svg"
+                          src={`${import.meta.env.BASE_URL}assets/spark.svg`}
                           alt="AI"
                           sx={{ width: 16, height: 16 }}
                         />
@@ -386,7 +386,7 @@ export function TopBar({
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                 <Box
                   component="img"
-                  src="/assets/wallet.svg"
+                  src={`${import.meta.env.BASE_URL}assets/wallet.svg`}
                   alt="Wallet"
                   sx={{ width: 24, height: 24 }}
                 />
@@ -417,7 +417,7 @@ export function TopBar({
               <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.5 }}>
                 <Box
                   component="img"
-                  src="/assets/cashback.svg"
+                  src={`${import.meta.env.BASE_URL}assets/cashback.svg`}
                   alt="Cashback"
                   sx={{ width: 24, height: 24 }}
                 />
