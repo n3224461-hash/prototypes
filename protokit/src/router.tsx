@@ -32,7 +32,7 @@ export const prototypes: PrototypeInfo[] = Object.entries(metaModules)
 
 // Build routes from prototype modules
 const prototypeRoutes: RouteObject[] = Object.entries(prototypeModules)
-  .filter(([path]) => !path.includes('shablony'))
+  .filter(([path]) => !path.includes('shablony') && !path.includes('lead-forms'))
   .map(([path, loader]) => {
     const slug = path.match(/\.\/prototypes\/(.+)\/index\.tsx/)?.[1] ?? '';
     return {
@@ -49,6 +49,15 @@ const shablonyRoute: RouteObject = {
   path: 'shablony',
   lazy: async () => {
     const mod = await import('./prototypes/shablony/index.tsx');
+    return { Component: mod.default };
+  },
+};
+
+// Lead-forms route without AppShell
+const leadFormsRoute: RouteObject = {
+  path: 'lead-forms/*',
+  lazy: async () => {
+    const mod = await import('./prototypes/lead-forms/index.tsx');
     return { Component: mod.default };
   },
 };
@@ -70,6 +79,7 @@ export const router = createBrowserRouter(
       ],
     },
     shablonyRoute,
+    leadFormsRoute,
   ],
   {
     basename: import.meta.env.BASE_URL.replace(/\/$/, ''),
